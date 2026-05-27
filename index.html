@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMAR - Transporte y Logística</title>
+    
+    <!-- FAVICON - Logo personalizado -->
+    <link rel="shortcut icon" href="images/logog.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logog-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logog-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logog-180x180.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- SECCIÓN HERO -->
+    <section id="inicio" class="hero">
+        <header id="header">
+            <a href="#" class="logo">
+                <img src="images/gamar_logo.png" alt="GAMAR Logotipo" class="logo-img">
+            </a>
+            
+            <nav id="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#flota">Flota</a>
+                <a href="#clientes">Clientes</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            
+            <div class="header-right">
+                <button class="btn-cotizar open-modal-btn">Cotizar Transporte</button>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <div class="hero-content">
+            <h1>Transporte Confiable, <br><span>Puntual y Seguro</span></h1>
+            <p>
+                Brindamos soluciones de transporte de carga con eficiencia, seguridad
+                y compromiso, conectando destinos y generando confianza en todo el
+                territorio nacional.
+            </p>
+
+            <div>
+                <button class="btn-cotizar open-modal-btn" style="padding: 15px 35px; font-size: 15px">
+                    Cotizar Transporte <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <div class="stat-text">
+                        <h3 class="counter" data-target="15">+0</h3>
+                        <p>Años de experiencia</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="stat-text">
+                        <h3>Perú</h3>
+                        <p>Cobertura nacional</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item">
+                    <i class="fas fa-headset"></i>
+                    <div class="stat-text">
+                        <h3>24/7</h3>
+                        <p>Monitoreo en vivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-bar">
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <div class="feature-info">
+                    <h4>Seguridad</h4>
+                    <p>Tu carga siempre protegida con los más altos estándares.</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <i class="far fa-clock"></i>
+                <div class="feature-info">
+                    <h4>Puntualidad</h4>
+                    <p>Cumplimos nuestros compromisos de tiempos estrictamente.</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <div class="feature-info">
+                    <h4>Experiencia</h4>
+                    <p>Un equipo profesional y capacitado a tu servicio.</p>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-route"></i>
+                <div class="feature-info">
+                    <h4>Cobertura</h4>
+                    <p>Llegamos exactamente a donde nos necesites.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL COTIZACIÓN -->
+    <div class="modal" id="quote-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal-btn">&times;</span>
+            <h2>Solicitar Cotización</h2>
+            
+            <form id="quote-form">
+                <div class="form-group">
+                    <label for="origen">Ciudad de Origen</label>
+                    <input type="text" id="origen" placeholder="Ej. Lima" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="destino">Ciudad de Destino</label>
+                    <input type="text" id="destino" placeholder="Ej. Arequipa" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" id="telefono" placeholder="Ej. 986 452 111" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipo-carga">Tipo de Carga</label>
+                    <select id="tipo-carga">
+                        <option value="cemento">Cemento</option>
+                        <option value="hierro">Mineral de Hierro</option>
+                        <option value="madera">Madera</option>
+                        <option value="fierro">Fierro de construcción</option>
+                        <option value="combustible">Combustible</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-cotizar" style="width: 100%; justify-content: center">
+                    Enviar Solicitud
+                </button>
+                
+                <p id="form-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- SECCIÓN NOSOTROS -->
+    <section id="nosotros" class="section-white">
+        <div class="nosotros-header">
+            <h2>¿Quiénes Somos?</h2>
+            <div class="section-subtitle">
+                Comprometidos con la excelencia en el transporte de carga
+            </div>
+        </div>
+
+        <div class="nosotros-cards-container">
+            <div class="nosotros-card">
+                <div class="card-icon">
+                    <i class="fas fa-truck-moving"></i>
+                </div>
+                <h3>Historia</h3>
+                <p>
+                    Nacimos para ofrecer soluciones de transporte de carga pesada y
+                    logística industrial con altos estándares de seguridad y
+                    cumplimiento en el Perú.
+                </p>
+            </div>
+
+            <div class="nosotros-card">
+                <div class="card-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Misión</h3>
+                <p>
+                    Brindar soluciones de transporte y logística eficientes, seguras y
+                    puntuales para el sector industrial y construcción.
+                </p>
+            </div>
+
+            <div class="nosotros-card">
+                <div class="card-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3>Visión</h3>
+                <p>
+                    Ser una de las empresas líderes en transporte de carga pesada y
+                    logística especializada en el Perú.
+                </p>
+            </div>
+        </div>
+
+        <div class="valores-corporativos-section">
+            <h3>Valores corporativos</h3>
+            <div class="valores-tags-container">
+                <span class="valor-tag"><i class="fas fa-lock icon-seguridad"></i> Seguridad</span>
+                <span class="valor-tag"><i class="fas fa-balance-scale icon-responsabilidad"></i> Responsabilidad</span>
+                <span class="valor-tag"><i class="far fa-clock icon-puntualidad"></i> Puntualidad</span>
+                <span class="valor-tag"><i class="fas fa-heart icon-compromiso"></i> Compromiso</span>
+                <span class="valor-tag"><i class="far fa-lightbulb icon-innovacion"></i> Innovación</span>
+                <span class="valor-tag"><i class="fas fa-check-square icon-confianza"></i> Confianza</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section id="servicios" class="section-white-services">
+        <div class="servicios-header">
+            <h2>Nuestros Servicios</h2>
+            <div class="section-subtitle">
+                Soluciones logísticas adaptadas a las industrias del Perú
+            </div>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card-split">
+                <div class="card-top-img" style="--bg-img: url('images/portada03.png')"></div>
+                <div class="card-bottom-desc">
+                    <h3>Mineral de Hierro</h3>
+                    <p>
+                        Transporte especializado para el sector minero con tolvas de alta
+                        capacidad y estrictos protocolos de seguridad vial.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card-split">
+                <div class="card-top-img" style="--bg-img: url('images/portada carga cemento.png')"></div>
+                <div class="card-bottom-desc">
+                    <h3>Cemento y Agregados</h3>
+                    <p>
+                        Traslado eficiente en plataformas para la industria de la
+                        construcción y megaproyectos de infraestructura.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card-split">
+                <div class="card-top-img" style="--bg-img: url('images/cargafierro.png')"></div>
+                <div class="card-bottom-desc">
+                    <h3>Fierro de Construcción</h3>
+                    <p>
+                        Logística de acero y varillas de construcción en unidades
+                        acondicionadas para el tipo de traslado por carretera.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card-split">
+                <div class="card-top-img" style="--bg-img: url('images/vehiculo05.png')"></div>
+                <div class="card-bottom-desc">
+                    <h3>Combustible</h3>
+                    <p>
+                        Unidades cisterna certificadas para el traslado seguro de
+                        hidrocarburos y materiales peligrosos con monitoreo crítico 24/7.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card-split">
+                <div class="card-top-img" style="--bg-img: url('images/furgomina.png')"></div>
+                <div class="card-bottom-desc">
+                    <h3>Alimentos para Mina</h3>
+                    <p>
+                        Unidades furgón cerradas y refrigeradas que garantizan el
+                        suministro de alimentos hacia varios puntos mineros.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-card-split">
+                <div class="card-top-img" style="--bg-img: url('images/cargamadera.png')"></div>
+                <div class="card-bottom-desc">
+                    <h3>Madera e Insumos Forestales</h3>
+                    <p>
+                        Flota acondicionada para el transporte forestal desde zonas de
+                        traslado con estiba y trincaje de máxima sujeción.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN FLOTA -->
+    <section id="flota" class="section-white-flota">
+        <h2>Nuestra Flota</h2>
+        <div class="section-subtitle">
+            Vehículos modernos para todo tipo de carga
+        </div>
+
+        <div class="flota-grid">
+            <div class="vehicle-card">
+                <div class="vehicle-img-local" style="--bg-img: url('images/semitrailer.png')"></div>
+                <div class="vehicle-info">
+                    <h3>Semitrailer</h3>
+                    <p>Transporte de carga pesada para industria y construcción.</p>
+                    <div class="vehicle-specs">
+                        <span><i class="fas fa-weight-hanging"></i> Hasta 45 TN</span>
+                        <span><i class="fas fa-ruler-combined"></i> Largo: 13.5 m</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vehicle-card">
+                <div class="vehicle-img-local" style="--bg-img: url('images/camioncisterna.png')"></div>
+                <div class="vehicle-info">
+                    <h3>Camión Cisterna</h3>
+                    <p>Transporte de combustible con altos estándares de seguridad.</p>
+                    <div class="vehicle-specs">
+                        <span><i class="fas fa-weight-hanging"></i> 10 000 GLS</span>
+                        <span><i class="fas fa-cube"></i> Capacidad 38 m³</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vehicle-card">
+                <div class="vehicle-img-local" style="--bg-img: url('images/cargafurgon.png')"></div>
+                <div class="vehicle-info">
+                    <h3>Furgón Cerrado</h3>
+                    <p>Seguridad máxima para carga de alimentos y mercancía de valor.</p>
+                    <div class="vehicle-specs">
+                        <span><i class="fas fa-box"></i> Carga seca</span>
+                        <span><i class="fas fa-shield-alt"></i> 100% Protegido</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CLIENTES -->
+    <section id="clientes" class="section-white-clients">
+        <div class="clientes-header">
+            <h2>Clientes que confían en GAMAR</h2>
+        </div>
+
+        <div class="logos-slider-container">
+            <div class="logos-track">
+                <div class="logo-item">
+                    <img src="images/yura.png" alt="Cemento Yura">
+                </div>
+                <div class="logo-item">
+                    <img src="images/raciemsa.png" alt="Racionalización Empresarial">
+                </div>
+                <div class="logo-item">
+                    <img src="images/zhonghui.png" alt="Zhonghui Peru">
+                </div>
+                <div class="logo-item">
+                    <img src="images/sanjose01.png" alt="Estación de Servicios San José">
+                </div>
+                <div class="logo-item">
+                    <img src="images/logoslicargo.png" alt="slicargo">
+                </div>
+                <div class="logo-item">
+                    <img src="images/minerabambas.png" alt="Minera Las Bambas">
+                </div>
+                <div class="logo-item">
+                    <img src="images/antapacay.png" alt="Minera Antapacay">
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonio-card">
+            <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonio-text">
+                "GAMAR ha sido clave en nuestros proyectos de expansión minera, su
+                flota y puntualidad superan estándares."
+            </p>
+            <span class="testimonio-autor">
+                — Gerente Logístico, Minera Las Bambas
+            </span>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="section-white">
+        <h2>Contáctanos</h2>
+        <div class="section-subtitle">
+            Estamos listos para atenderte y llevar tu carga a cualquier destino del Perú
+        </div>
+
+        <div class="contacto-container">
+            <!-- Información de contacto -->
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Oficina Principal</strong>
+                        <p>Av. Colón Nro. 103 B, Paucarpata, Arequipa - Perú</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Teléfono</strong>
+                        <p>Sr. Aldo Pezo Mamani</p>
+                        <p>+51 948 312 313</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <p>transportes.gamar.peru@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Horario de Atención</strong>
+                        <p>Lunes a Sábado</p>
+                        <p>8:00 AM - 7:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail">
+                    <i class="fas fa-truck"></i>
+                    <div>
+                        <strong>Cobertura</strong>
+                        <p>Rutas nacionales: Matarani, Arequipa, Cusco, Puno, Tacna y más.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="contact-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d284.4341709955803!2d-71.51211804331949!3d-16.431183974340538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b3b43879b93%3A0xb48a3485541f52f!2sC.%20Col%C3%B3n%20104%2C%20Jos%C3%A9%20Luis%20Bustamante%20y%20Rivero%2004008!5e0!3m2!1ses!2spe!4v1779827375842!5m2!1ses!2spe" 
+                    width="600" 
+                    height="450" 
+                    style="border: 0" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/51948312313?text=Hola,%20quiero%20una%20cotización%20de%20carga" 
+       class="whatsapp-float" 
+       target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>GAMAR</h4>
+                <p>Transporte Confiable, Puntual y Seguro. Movemos tu carga en todo el Perú.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Enlaces rápidos</h4>
+                <a href="#inicio">Inicio</a><br>
+                <a href="#servicios">Servicios</a><br>
+                <a href="#flota">Flota</a><br>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a><br>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2026 GAMAR Transportes. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
