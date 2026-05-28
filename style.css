@@ -957,7 +957,6 @@ nav a.active::after {
     font-weight: 700;
     color: #0b1d3a;
 }
-
 /* DOTS */
 
 .carousel-dots{
@@ -981,6 +980,7 @@ nav a.active::after {
     cursor: pointer;
 }
 
+/* DOT ACTIVO */
 
 .dot.active{
     background: #ff6b00;
