@@ -884,35 +884,121 @@ nav a.active::after {
     opacity: 1;
 }
 
-.testimonio-card {
-    background: var(--blanco);
-    max-width: 950px;
-    margin: 0 auto;
-    padding: 40px 50px;
-    border-radius: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+/* ===== TESTIMONIOS ===== */
+
+.testimonios-carousel{
     position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonios-track{
+    position: relative;
+    min-height: 320px;
+}
+
+/* CARD */
+
+.testimonio-card{
+    position: absolute;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateX(50px);
+
+    transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 50px;
+
+    border-radius: 30px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.08);
+
     text-align: center;
 }
 
-.quote-icon {
-    font-size: 32px;
-    color: var(--naranja);
-    margin-bottom: 15px;
+/* CARD ACTIVA */
+
+.testimonio-card.active{
+    opacity: 1;
+    transform: translateX(0);
+    position: relative;
 }
 
-.testimonio-text {
-    font-size: 17px;
-    color: var(--azul-oscuro);
-    font-weight: 600;
-    line-height: 1.6;
-    margin-bottom: 15px;
+/* ICONO */
+
+.quote-icon{
+    font-size: 45px;
+    color: #ff6b00;
+    margin-bottom: 25px;
 }
 
-.testimonio-autor {
-    font-size: 14px;
-    color: #6c757d;
+/* TEXTO */
+
+.testimonio-text{
+    font-size: 22px;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+/* AUTOR */
+
+.testimonio-autor{
+    font-size: 16px;
     font-weight: 700;
+    color: #0b1d3a;
+}
+
+/* DOTS */
+
+.carousel-dots{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.dot{
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #d1d5db;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+.dot.active{
+    background: #ff6b00;
+
+    transform: scale(1.2);
+}
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .testimonio-card{
+        padding: 35px 25px;
+    }
+
+    .testimonio-text{
+        font-size: 18px;
+    }
+
 }
 
 @keyframes infinite-scroll {

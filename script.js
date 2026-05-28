@@ -112,3 +112,61 @@ document
       }
     });
   });
+
+
+  // 9. Carrusel testimonio 
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const cards = document.querySelectorAll(".testimonio-card");
+    const dots = document.querySelectorAll(".dot");
+
+    let current = 0;
+
+    function showCard(index){
+
+        /* CARDS */
+
+        cards.forEach(card => {
+            card.classList.remove("active");
+        });
+
+        cards[index].classList.add("active");
+
+        /* DOTS */
+
+        dots.forEach(dot => {
+            dot.classList.remove("active");
+        });
+
+        dots[index].classList.add("active");
+    }
+
+    /* CLICK EN DOTS */
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            current = index;
+
+            showCard(current);
+        });
+
+    });
+
+    /* AUTO PLAY */
+
+    setInterval(() => {
+
+        current++;
+
+        if(current >= cards.length){
+            current = 0;
+        }
+
+        showCard(current);
+
+    }, 5000);
+
+});
