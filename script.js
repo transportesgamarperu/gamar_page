@@ -8,7 +8,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 2. Animación interactiva de los números (Efecto Contador)
+// 2. Animación interactiva de los números
 const counters = document.querySelectorAll(".counter");
 counters.forEach((counter) => {
   const updateCount = () => {
@@ -113,71 +113,62 @@ document
     });
   });
 
-
-  // 9. Carrusel testimonio 
+// 9. Carrusel testimonio
 
 document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".testimonio-card");
+  const dots = document.querySelectorAll(".dot");
 
-    const cards = document.querySelectorAll(".testimonio-card");
-    const dots = document.querySelectorAll(".dot");
+  let current = 0;
 
-    let current = 0;
+  function showCard(index) {
+    /* CARDS */
 
-    function showCard(index){
+    cards.forEach((card) => {
+      card.classList.remove("active");
+    });
 
-        /* CARDS */
+    cards[index].classList.add("active");
 
-        cards.forEach(card => {
-            card.classList.remove("active");
-        });
+    /* DOTS */
 
-        cards[index].classList.add("active");
+    dots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
 
-        /* DOTS */
+    dots[index].classList.add("active");
+  }
 
-        dots.forEach(dot => {
-            dot.classList.remove("active");
-        });
+  /* CLICK EN DOTS */
 
-        dots[index].classList.add("active");
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      current = index;
+
+      showCard(current);
+    });
+  });
+
+  /* AUTO PLAY */
+
+  setInterval(() => {
+    current++;
+
+    if (current >= cards.length) {
+      current = 0;
     }
 
-    /* CLICK EN DOTS */
-
-    dots.forEach((dot, index) => {
-
-        dot.addEventListener("click", () => {
-
-            current = index;
-
-            showCard(current);
-        });
-
-    });
-
-    /* AUTO PLAY */
-
-    setInterval(() => {
-
-        current++;
-
-        if(current >= cards.length){
-            current = 0;
-        }
-
-        showCard(current);
-
-    }, 5000);
-
+    showCard(current);
+  }, 5000);
 });
 
- // botones del grupo empresarial
-    document.querySelectorAll('.grupo-btn').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.preventDefault();
-            const url = this.getAttribute('data-url');
-            if (url) {
-                window.open(url, '_blank', 'noopener,noreferrer');
-            }
-        });
-    });
+// botones del grupo empresarial
+document.querySelectorAll(".grupo-btn").forEach((button) => {
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const url = this.getAttribute("data-url");
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  });
+});
