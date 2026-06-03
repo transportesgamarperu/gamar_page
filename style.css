@@ -1026,6 +1026,173 @@ nav a.active::after {
     }
 }
 
+ /* ===== GRUPO EMPRESARIAL - ESTILO CONSISTENTE ===== */
+    .grupo-empresarial {
+        margin-top: 4rem;
+        padding: 2rem 1rem;
+        background: transparent; /* Sin fondo azul, igual que la sección */
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .grupo-titulo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0b1d3a;
+        margin-bottom: 2rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.75rem;
+    }
+
+    .grupo-titulo::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 4px;
+        border-radius: 4px;
+    }
+
+    .grupo-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .grupo-item {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 1.8rem 1.5rem;
+        text-align: center;
+        min-width: 240px;
+        flex: 1;
+        max-width: 280px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.02);
+        border: 1px solid #eef2f6;
+        cursor: pointer;
+    }
+
+    .grupo-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+        border-color: #ff6b0040;
+    }
+
+    .grupo-icon {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 1.2rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fef7ed;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    .grupo-item:hover .grupo-icon {
+        background: #fff1e0;
+        transform: scale(1.02);
+    }
+
+    .grupo-img {
+        max-width: 65px;
+        max-height: 65px;
+        object-fit: contain;
+    }
+
+    .grupo-item span {
+        display: block;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #0b1d3a;
+        margin-bottom: 1rem;
+    }
+
+    .grupo-btn {
+        background: #ff6b00;
+        color: white;
+        border: none;
+        padding: 0.6rem 1.3rem;
+        border-radius: 40px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: inherit;
+    }
+
+    .grupo-btn:hover {
+        background: #e05d00;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(255, 107, 0, 0.25);
+    }
+
+    .grupo-footer {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .grupo-footer p {
+        color: #64748b;
+        font-size: 0.95rem;
+        font-style: italic;
+        letter-spacing: 0.3px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .grupo-empresarial {
+            margin-top: 2.5rem;
+        }
+        
+        .grupo-titulo {
+            font-size: 1.6rem;
+        }
+        
+        .grupo-item {
+            padding: 1.4rem;
+            min-width: 200px;
+        }
+        
+        .grupo-icon {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .grupo-img {
+            max-width: 50px;
+            max-height: 50px;
+        }
+        
+        .grupo-item span {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .grupo-logos {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .grupo-item {
+            width: 100%;
+            max-width: 280px;
+        }
+    }
+
 /* --- SECCIÓN VALORES CORPORATIVOS --- */
 .valores-corporativos-section {
     margin-top: 40px;
@@ -1172,7 +1339,7 @@ nav a.active::after {
     display: block;
 }
 
-/* --- MEJORAS RESPONSIVE PARA CONTACTO --- */
+/* --- RESPONSIVE CONTACTO --- */
 
 /* Ajuste del contenedor de contacto en tablets */
 @media (max-width: 992px) {

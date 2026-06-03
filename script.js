@@ -170,3 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
 
 });
+
+ // botones del grupo empresarial
+    document.querySelectorAll('.grupo-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const url = this.getAttribute('data-url');
+            if (url) {
+                window.open(url, '_blank', 'noopener,noreferrer');
+            }
+        });
+    });
